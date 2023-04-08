@@ -1,0 +1,87 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="updateModal{{loop.index}}"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Update Mahasiswa
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="/update/{{data.id}}" method="POST">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">NIM</label>
+            <!-- Disable input intuk mematikan update Nim -->
+            <input
+              disabled
+              type="text"
+              name="nim"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="NIM"
+              value="{{data.nim}}"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Nama</label
+            >
+            <input
+              type="text"
+              name="nama"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Nama"
+              value="{{data.nama}}"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" required="" class="form-label"
+              >Jurusan</label
+            >
+            <select
+              class="form-select"
+              name="jurusan"
+              aria-label="Default select example"
+              value="{{data.jurusan}}"
+              required
+            >
+              <option selected disabled value="{{data.jurusan}}">
+                {{data.jurusan}}
+              </option>
+              <option value="Teknik Informatika">Teknik Informatika</option>
+              <option value="Akuntasi">Akuntasi</option>
+              <option value="DKV">DKV</option>
+              <option value="Kebidanan">Kebidanan</option>
+              <option value="Perhotelan">Perhotelan</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <!-- <button
+              type="submit"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button> -->
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

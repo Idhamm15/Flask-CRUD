@@ -1,0 +1,30 @@
+# Membuat Project Venv
+- python -m venv project_crud
+
+# Buka Terminal vs code
+- project\Scripts\activate (for windows)
+- pip list (mengecek aktivasi script)
+- pip install flask (menginstall flask)
+
+# Folder
+- Buat folder template dan static di luar folder project_crud
+- Buat file index.html di luar folder template lalu ketika h1 hello world
+
+- buat file app.py di luar folder project_crud, lalu isi dengan code
+from flask import Flask
+
+app = flask (__name__)
+app.static_folder = 'static'
+
+
+@app.route('/')
+def index():
+    return ('Hello World')
+
+- . project_crud/bin/activate (masuk direktorinya)
+- pip install flask
+- Ketik di terminal, "flask run"
+-  
+
+# Install mysql flask
+- pip install flask_mysqldb

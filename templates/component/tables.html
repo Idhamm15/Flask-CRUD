@@ -1,0 +1,46 @@
+<div class="container" style="padding-top: 10%">
+  <h3>Daftar Mahasiswa</h3>
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Tambah Data
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NIM</th>
+        <th scope="col">NAMA</th>
+        <th scope="col">JURUSAN</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in mahasiswa %}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{data.nim}}</td>
+        <td>{{data.nama}}</td>
+        <td>{{data.jurusan}}</td>
+        <td>
+          <a
+            href="#modal/{{data.id}}"
+            class="btn btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#updateModal{{loop.index}}"
+          >
+            <i class="fa-solid fa-pen-to-square"></i></a>
+          <a href="/delete/{{data.id}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+        </td>
+      </tr>
+      {% include 'component/updateModal.html' %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% include 'component/insertModal.html' %}
